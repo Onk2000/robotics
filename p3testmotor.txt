@@ -1,0 +1,19 @@
+import RPi.GPIO as GPIO # Import Library to access GPIO PIN
+import time #To access delay function 
+GPIO.setmode(GPIO.BOARD) #Consider complete raspberry-pi
+GPIO.setwarnings(False) # To avoid same PIN use warning
+DC_Motor_Pin1 = 7 #Define PIN for DC Motor
+DC_Motor_Pin2 = 11 #Define PIN for DC Motor
+GPIO.setup(DC_Motor_Pin1,GPIO.OUT) # Set pin function as output
+GPIO.setup(DC_Motor_Pin2,GPIO.OUT) # Set pin function as output
+
+
+while (1):
+   #Motor clockWise
+   GPIO.output(DC_Motor_Pin1,GPIO.HIGH) #LED ON 
+   GPIO.output(DC_Motor_Pin2,GPIO.LOW) #LED ON
+   time.sleep(5) #Give 5 second delay
+   #Motor Anticlockwise 
+   GPIO.output(DC_Motor_Pin1,GPIO.LOW) #LED ON
+   GPIO.output(DC_Motor_Pin2,GPIO.HIGH) #LED ON
+   time.sleep(5)#Give 5 second delay
